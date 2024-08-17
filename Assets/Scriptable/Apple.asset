@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   alimentType: 1
-  alimentSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  alimentSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}

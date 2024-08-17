@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df34d84a0eb22b43bfff0b4467ad696, type: 3}
   m_Name: Banana
   m_EditorClassIdentifier: 
-  alimentType: 1
-  alimentSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  alimentType: 2
+  alimentSprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}

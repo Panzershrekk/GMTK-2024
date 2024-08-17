@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
+using UnityEngine.Events;
+using Unity.VisualScripting;
 //
 // THIS CLASS US SINGLETON PATTERN
 //
@@ -18,8 +21,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get { return _instance; } }
 
-    [SerializeField] private List<AlimentDefinition> _possibleAliments = new List<AlimentDefinition>(); 
-
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -32,22 +33,117 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+    [SerializeField] private float _slimeObjective = 10f;
+    [SerializeField] private List<AlimentDefinition> _possibleAliments = new List<AlimentDefinition>();
+    [SerializeField] private TMP_Text _timerText;
+    [SerializeField] private TreadmillHandler _treadmillHandler;
+    [SerializeField] private SpawnHandler _spawnerHandler;
+    [SerializeField] private List<Slime> _slimeList = new List<Slime>();
+    [SerializeField] private EndPanel _endPanel;
+    [SerializeField] private float _currentRoundTimeInSecond = 180f;
 
-    public bool IsGameStarted = false;
-    public bool IsGameOver = false;
-   
-    public void StartGame()
+    private bool _gameStarted = false;
+    private UnityEvent _onGameStarted = new UnityEvent();
+    private UnityEvent _onGameEnded = new UnityEvent();
+
+    public float CurrentRoundTime
     {
-        IsGameStarted = true;
+        get
+        {
+            return _currentRoundTimeInSecond;
+        }
+
+        private set
+        {
+            _currentRoundTimeInSecond = value;
+            UpdateTimerText(_currentRoundTimeInSecond);
+        }
     }
 
-    public void FinishGame()
+    private void Start()
     {
-        IsGameOver = true;
+        _onGameStarted.AddListener(_treadmillHandler.Setup);
+        _onGameStarted.AddListener(_spawnerHandler.Setup);
+        _onGameEnded.AddListener(_spawnerHandler.Stop);
+        foreach (Slime slime in _slimeList)
+        {
+            slime.Setup(_slimeObjective);
+        }
+        StartGame();
+    }
+
+    public void StartGame()
+    {
+        _gameStarted = true;
+        _onGameStarted?.Invoke();
+    }
+
+    private void Update()
+    {
+        if (_gameStarted == true)
+        {
+            CurrentRoundTime -= Time.deltaTime;
+            if (CurrentRoundTime <= 0)
+            {
+                //FinsihGame
+                _gameStarted = false;
+                _onGameEnded?.Invoke();
+                _endPanel.gameObject.SetActive(true);
+                FreezeAllAliment();
+                _endPanel.Display(true);
+            }
+        }
     }
 
     public AlimentDefinition GetRandomAlimentFromPossibility()
     {
-        return _possibleAliments[Random.Range(0, _possibleAliments.Count)];
+        return _possibleAliments[UnityEngine.Random.Range(0, _possibleAliments.Count)];
+    }
+
+    public List<AlimentDefinition> GetNotValidatedAlimentInSlimeCombination()
+    {
+        List<AlimentDefinition> alimentDefinitions = new List<AlimentDefinition>();
+        foreach (Slime slime in _slimeList)
+        {
+            List<CombinationPart> combinationParts = slime.GetCombination().GetCombinationPart();
+            foreach (CombinationPart combinationPart in combinationParts)
+            {
+                if (combinationPart.isValidated == false)
+                {
+                    alimentDefinitions.Add(combinationPart.alimentDefinition);
+                }
+            }
+        }
+        return alimentDefinitions;
+    }
+
+    private void UpdateTimerText(float time)
+    {
+        TimeSpan t = TimeSpan.FromSeconds(time);
+        string formatedTime = string.Format("{0:D2}:{1:D2}", t.Minutes, t.Seconds);
+        if (_timerText != null)
+        {
+            _timerText.text = formatedTime;
+        }
+    }
+
+    private void FreezeAllAliment()
+    {
+        var aliments = FindObjectsByType<EddibleAliment>(FindObjectsSortMode.None);
+        foreach (var aliment in aliments)
+        {
+            Rigidbody2D r = aliment.GetComponent<Rigidbody2D>();
+            if (r != null)
+            {
+                r.constraints = RigidbodyConstraints2D.FreezePosition;
+            }
+        }
+
+    }
+
+    private void OnDestroy()
+    {
+        _onGameStarted.RemoveAllListeners();
+        _onGameEnded?.RemoveAllListeners();
     }
 }

@@ -11,14 +11,21 @@ public class TreadmillHandler : MonoBehaviour
     [SerializeField] private Treadmill _rightTreadMill;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _inputActions = new GameInputControl();
         _inputActions.Player.Enable();
+        _topTreadMill.SetInputameText(_inputActions.Player.SwitchTopTreadmill.name);
+        _leftTreadMill.SetInputameText(_inputActions.Player.SwitchLeftTreadmill.name);
+        _rightTreadMill.SetInputameText(_inputActions.Player.SwitchRightTreadmill.name);
+
+    }
+
+    public void Setup()
+    {
         _inputActions.Player.SwitchTopTreadmill.performed += SwitchTopTreadMill;
         _inputActions.Player.SwitchLeftTreadmill.performed += SwitchLeftTreadMill;
         _inputActions.Player.SwitchRightTreadmill.performed += SwitchRightTreadMill;
-
     }
 
     //TODO, voir pour uniformiser ça
@@ -35,5 +42,12 @@ public class TreadmillHandler : MonoBehaviour
     private void SwitchRightTreadMill(InputAction.CallbackContext context)
     {
         _rightTreadMill.InvertDirection();
+    }
+
+    private void OnDestroy()
+    {
+        _inputActions.Player.SwitchTopTreadmill.performed -= SwitchTopTreadMill;
+        _inputActions.Player.SwitchLeftTreadmill.performed -= SwitchLeftTreadMill;
+        _inputActions.Player.SwitchRightTreadmill.performed -= SwitchRightTreadMill;
     }
 }

@@ -68,8 +68,8 @@ public class Combination : MonoBehaviour
         }
     }
 
-    private void Validate()
+    public List<CombinationPart> GetCombinationPart()
     {
-
+        return _combinationPart;
     }
 }
