@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get { return _instance; } }
 
+    [SerializeField] private List<AlimentDefinition> _possibleAliments = new List<AlimentDefinition>(); 
 
     private void Awake()
     {
@@ -43,5 +44,10 @@ public class GameManager : MonoBehaviour
     public void FinishGame()
     {
         IsGameOver = true;
+    }
+
+    public AlimentDefinition GetRandomAlimentFromPossibility()
+    {
+        return _possibleAliments[Random.Range(0, _possibleAliments.Count)];
     }
 }
