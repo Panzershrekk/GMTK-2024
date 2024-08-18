@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ead3651c137d047ae7f9c135370112, type: 3}
   m_Name: BlueSlimeSmall
   m_EditorClassIdentifier: 
-  spriteMouthClosed: {fileID: 21300000, guid: 8133897e4cb10934a81acc3ec96fe15f, type: 3}
-  spriteTop: {fileID: 21300000, guid: 288ebdfcaf6610546946524a694ea570, type: 3}
+  spriteMouthClosed: {fileID: 21300000, guid: 0f85a0e6c479f56449fac4091309a958, type: 3}
+  spriteTop: {fileID: 21300000, guid: 59a97e2733ad21b4bacc0cf241c55d76, type: 3}
   spriteMouth: {fileID: 21300000, guid: f60cc6015ca6dac4c89271767fd1aec7, type: 3}
   spriteTongue: {fileID: 21300000, guid: dc49a982aa6ab364180711f67b540c67, type: 3}
-  spriteDown: {fileID: 21300000, guid: ea519ed950d2a2441afd904a146b5113, type: 3}
+  spriteDown: {fileID: 21300000, guid: 017b220eff92f894f98090fd18609880, type: 3}
   yOffset: 0
