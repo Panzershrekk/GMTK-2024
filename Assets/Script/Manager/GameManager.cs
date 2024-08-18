@@ -41,7 +41,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Slime> _slimeList = new List<Slime>();
     [SerializeField] private EndPanel _endPanel;
     [SerializeField] private float _currentRoundTimeInSecond = 180f;
-    [SerializeField] private TMP_Text _objectiveText;
+    [SerializeField] private TMP_Text _objectiveSlimeOneText;
+    [SerializeField] private TMP_Text _objectiveSlimeTwoText;
 
     private bool _gameStarted = false;
     private UnityEvent _onGameStarted = new UnityEvent();
@@ -70,7 +71,8 @@ public class GameManager : MonoBehaviour
         {
             slime.Setup();
         }
-        _objectiveText.text = _slimeObjective.ToString() + " KG";
+        _objectiveSlimeOneText.text = _slimeObjective.ToString() + " KG";
+        _objectiveSlimeTwoText.text = _slimeObjective.ToString() + " KG";
         StartGame();
     }
 
@@ -92,7 +94,15 @@ public class GameManager : MonoBehaviour
                 _onGameEnded?.Invoke();
                 _endPanel.gameObject.SetActive(true);
                 FreezeAllAliment();
-                _endPanel.Display(true);
+                bool victory = true;
+                foreach (Slime slime in _slimeList)
+                {
+                    if (slime.GetSize() < _slimeObjective)
+                    {
+                        victory = false;
+                    }
+                }
+                _endPanel.Display(victory);
             }
         }
     }

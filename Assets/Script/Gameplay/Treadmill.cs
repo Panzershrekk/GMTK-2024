@@ -20,6 +20,9 @@ public class Treadmill : MonoBehaviour
     void Start()
     {
         Refresh();
+        Debug.Log("Limir right " + _limitRight.localPosition);
+        Debug.Log("Limir left " + _limitLeft.localPosition);
+
     }
 
     void Update()
@@ -29,7 +32,6 @@ public class Treadmill : MonoBehaviour
 
         foreach (var chain in _chains)
         {
-            //chain.transform.position += translation;
             int currentIndex = _chains.IndexOf(chain);
             int previousIndex = currentIndex - 1;
             if (currentIndex - 1 < 0)
@@ -42,17 +44,18 @@ public class Treadmill : MonoBehaviour
                 nextIndex = 0;
             }
 
-            if (chain.transform.position.x < _limitLeft.position.x)
+            if (chain.transform.localPosition.x < _limitLeft.localPosition.x)
             {
                 GameObject previousChain = _chains[previousIndex];
-                chain.transform.position = new Vector3(previousChain.transform.position.x + 0.64f, chain.transform.position.y, chain.transform.position.z);
+                chain.transform.localPosition = new Vector3(previousChain.transform.localPosition.x + 0.64f, chain.transform.localPosition.y, chain.transform.localPosition.z);
             }
-            if (chain.transform.position.x > _limitRight.position.x)
+            if (chain.transform.localPosition.x > _limitRight.localPosition.x)
             {
                 GameObject nextChain = _chains[nextIndex];
-                chain.transform.position = new Vector3(nextChain.transform.position.x - 0.64f, chain.transform.position.y, chain.transform.position.z);
+                chain.transform.localPosition = new Vector3(nextChain.transform.localPosition.x - 0.64f, chain.transform.localPosition.y, chain.transform.localPosition.z);
             }
-            chain.transform.Translate(translation);
+            chain.transform.localPosition += translation;
+            //chain.transform.Translate(translation);
         }
         /*if (_direction == TreadmillDirectionType.Left && _effector.speed > -_speed)
         {

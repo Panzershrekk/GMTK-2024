@@ -140,4 +140,9 @@ public class Slime : MonoBehaviour
             Destroy(col.gameObject);
         }
     }
+
+    public float GetSize()
+    {
+        return _currentSize;
+    }
 }

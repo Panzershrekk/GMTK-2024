@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45ead3651c137d047ae7f9c135370112, type: 3}
-  m_Name: Slimelarge
+  m_Name: BlueSlimelarge
   m_EditorClassIdentifier: 
   spriteMouthClosed: {fileID: 21300000, guid: c650740810ae34846972fd82c0322a33, type: 3}
   spriteTop: {fileID: 21300000, guid: ccf70e33d2ceef44ab3576ec06f722b7, type: 3}
