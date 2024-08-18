@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2df34d84a0eb22b43bfff0b4467ad696, type: 3}
-  m_Name: Banana
+  m_Name: Cake03
   m_EditorClassIdentifier: 
-  alimentType: 2
-  alimentSprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  alimentType: 3
+  alimentSprite: {fileID: 21300000, guid: 338e1f9133a6f0042b6772f7a9d2f17c, type: 3}
+  outlineSprite: {fileID: 0}

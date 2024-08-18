@@ -7,4 +7,5 @@ public class AlimentDefinition : ScriptableObject
 {
     public AlimentType alimentType;
     public Sprite alimentSprite;
+    public Sprite outlineSprite;
 }

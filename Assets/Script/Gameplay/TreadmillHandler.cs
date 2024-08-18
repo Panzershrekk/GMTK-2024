@@ -32,6 +32,7 @@ public class TreadmillHandler : MonoBehaviour
     private void SwitchTopTreadMill(InputAction.CallbackContext context)
     {
         _topTreadMill.InvertDirection();
+        Debug.Log(_inputActions.Player.SwitchTopTreadmill.bindings[0].id);
     }
 
     private void SwitchLeftTreadMill(InputAction.CallbackContext context)

@@ -5,9 +5,12 @@ using UnityEngine;
 public enum AlimentType
 {
     None = 0,
-    Apple = 1,
-    Banana = 2,
-    WaterMelon = 3,
+    CakeOne = 1,
+    CakeTwo = 2,
+    CakeThree = 3,
+    CakeFour = 4,
+    CakeFive = 5,
+
 }
 
 public enum TreadmillDirectionType

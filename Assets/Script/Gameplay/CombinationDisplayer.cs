@@ -26,7 +26,7 @@ public class CombinationDisplayer : MonoBehaviour
         foreach (CombinationPart part in _combinationPart)
         {
             UICombinationPart UICombinationPart = Instantiate(_UICombinationPart, _combinationPartParent);
-            UICombinationPart.Setup(part.alimentDefinition.alimentSprite, part.isValidated);
+            UICombinationPart.Setup(part);
         }
     }
 
