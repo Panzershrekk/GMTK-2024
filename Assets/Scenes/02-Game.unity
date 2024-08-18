@@ -1092,6 +1092,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6cf74a3ccbfe9194181363477399ec4a, type: 2}
   - {fileID: 11400000, guid: 9404720804063874b901c25d67a3deb0, type: 2}
   - {fileID: 11400000, guid: 15475ac8cf9b3cf40982364a22c56209, type: 2}
+  - {fileID: 11400000, guid: a9bbced7044ed9b4d8eab6cf8a629114, type: 2}
+  - {fileID: 11400000, guid: 20b8dc969faabd94db94403df972929a, type: 2}
   _timerText: {fileID: 508165994}
   _treadmillHandler: {fileID: 1437109943}
   _spawnerHandler: {fileID: 881890478}
@@ -1688,7 +1690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7471585041151753911, guid: 7757f9f6767fa5545b8c328c9b9eaf76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 9.23
       objectReference: {fileID: 0}
     - target: {fileID: 7471585041151753911, guid: 7757f9f6767fa5545b8c328c9b9eaf76, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3257,7 +3259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7471585041151753911, guid: 7757f9f6767fa5545b8c328c9b9eaf76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -9.08
       objectReference: {fileID: 0}
     - target: {fileID: 7471585041151753911, guid: 7757f9f6767fa5545b8c328c9b9eaf76, type: 3}
       propertyPath: m_LocalPosition.y

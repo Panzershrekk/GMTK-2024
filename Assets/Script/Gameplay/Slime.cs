@@ -12,6 +12,13 @@ public class Slime : MonoBehaviour
     [SerializeField] private int _combinationSize;
     [SerializeField] private Combination _combination;
     [SerializeField] private float _sizeGainPerSuccess = 1f;
+
+    [SerializeField] private SpriteRenderer mouthCloseSprite;
+    [SerializeField] private SpriteRenderer slimeTopSprite;
+    [SerializeField] private SpriteRenderer slimeDownSprite;
+    [SerializeField] private SpriteRenderer mouthSprite;
+    [SerializeField] private SpriteRenderer tongueSprite;
+
     private float _currentSize = 1;
     private float _objective = 0;
 
