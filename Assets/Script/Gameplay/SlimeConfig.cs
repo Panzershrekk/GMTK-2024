@@ -11,4 +11,6 @@ public class SlimeConfig : ScriptableObject
     public Sprite spriteMouth;
     public Sprite spriteTongue;
     public Sprite spriteDown;
+
+    public float yOffset;
 }

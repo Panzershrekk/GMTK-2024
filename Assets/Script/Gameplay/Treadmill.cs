@@ -12,31 +12,56 @@ public class Treadmill : MonoBehaviour
     [SerializeField] private List<GameObject> _chains = new List<GameObject>();
     [SerializeField] private Transform _limitRight;
     [SerializeField] private Transform _limitLeft;
+    [SerializeField] private float _speedGain = 1f;
+    [SerializeField] private Arrow _leftArrow;
+    [SerializeField] private Arrow _rightArrow;
 
     // Start is called before the first frame update
     void Start()
     {
-        RefreshSpeed();
+        Refresh();
     }
 
     void Update()
     {
-        Vector3 dir = _direction == TreadmillDirectionType.Right ?  Vector3.right :  Vector3.left;
-        Vector3 translation = dir * 5f * Time.deltaTime;
+        Vector3 dir = _direction == TreadmillDirectionType.Right ? Vector3.right : Vector3.left;
+        Vector3 translation = dir * Mathf.Abs(_effector.speed) * Time.deltaTime;
 
         foreach (var chain in _chains)
         {
-            //chain.transform.Translate(translation);
-            chain.transform.position += translation;
+            //chain.transform.position += translation;
+            int currentIndex = _chains.IndexOf(chain);
+            int previousIndex = currentIndex - 1;
+            if (currentIndex - 1 < 0)
+            {
+                previousIndex = _chains.Count - 1;
+            }
+            int nextIndex = currentIndex + 1;
+            if (nextIndex >= _chains.Count)
+            {
+                nextIndex = 0;
+            }
+
             if (chain.transform.position.x < _limitLeft.position.x)
             {
-                chain.transform.position = new Vector3(_limitRight.position.x, chain.transform.position.y, chain.transform.position.z);
+                GameObject previousChain = _chains[previousIndex];
+                chain.transform.position = new Vector3(previousChain.transform.position.x + 0.64f, chain.transform.position.y, chain.transform.position.z);
             }
             if (chain.transform.position.x > _limitRight.position.x)
             {
-                chain.transform.position = new Vector3(_limitLeft.position.x, chain.transform.position.y, chain.transform.position.z);
+                GameObject nextChain = _chains[nextIndex];
+                chain.transform.position = new Vector3(nextChain.transform.position.x - 0.64f, chain.transform.position.y, chain.transform.position.z);
             }
+            chain.transform.Translate(translation);
         }
+        /*if (_direction == TreadmillDirectionType.Left && _effector.speed > -_speed)
+        {
+            _effector.speed -= _speedGain * Time.deltaTime;
+        }
+        if (_direction == TreadmillDirectionType.Right && _effector.speed < _speed)
+        {
+            _effector.speed += _speedGain * Time.deltaTime;
+        }*/
     }
 
     public void SetInputameText(string text)
@@ -50,12 +75,26 @@ public class Treadmill : MonoBehaviour
     public void InvertDirection()
     {
         _direction = _direction == TreadmillDirectionType.Right ? TreadmillDirectionType.Left : TreadmillDirectionType.Right;
-        RefreshSpeed();
+        Refresh();
     }
 
-    private void RefreshSpeed()
+    private void Refresh()
     {
         _effector.speed = _direction == TreadmillDirectionType.Right ? _speed : -_speed;
+        if (_leftArrow != null && _rightArrow != null)
+        {
+            if (_direction == TreadmillDirectionType.Left)
+            {
+                _rightArrow.Toggle(false);
+                _leftArrow.Toggle(true);
+            }
+            else if (_direction == TreadmillDirectionType.Right)
+            {
+                _rightArrow.Toggle(true);
+                _leftArrow.Toggle(false);
+            }
+        }
+        //_effector.speed = 0;
     }
 
 }

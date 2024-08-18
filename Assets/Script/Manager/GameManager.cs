@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Slime> _slimeList = new List<Slime>();
     [SerializeField] private EndPanel _endPanel;
     [SerializeField] private float _currentRoundTimeInSecond = 180f;
+    [SerializeField] private TMP_Text _objectiveText;
 
     private bool _gameStarted = false;
     private UnityEvent _onGameStarted = new UnityEvent();
@@ -67,8 +68,9 @@ public class GameManager : MonoBehaviour
         _onGameEnded.AddListener(_spawnerHandler.Stop);
         foreach (Slime slime in _slimeList)
         {
-            slime.Setup(_slimeObjective);
+            slime.Setup();
         }
+        _objectiveText.text = _slimeObjective.ToString() + " KG";
         StartGame();
     }
 

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ead3651c137d047ae7f9c135370112, type: 3}
   m_Name: Slimelarge
   m_EditorClassIdentifier: 
-  spriteMouthClosed: {fileID: 0}
-  spriteTop: {fileID: 0}
-  spriteMouth: {fileID: 0}
-  spriteTongue: {fileID: 0}
-  spriteDown: {fileID: 0}
+  spriteMouthClosed: {fileID: 21300000, guid: c650740810ae34846972fd82c0322a33, type: 3}
+  spriteTop: {fileID: 21300000, guid: ccf70e33d2ceef44ab3576ec06f722b7, type: 3}
+  spriteMouth: {fileID: 21300000, guid: f927ec357e2253749820954af54aecb3, type: 3}
+  spriteTongue: {fileID: 21300000, guid: 4059c38e0ca2d31449bfcc073b1fd631, type: 3}
+  spriteDown: {fileID: 21300000, guid: 9f15138a9595f0b4cbfbaf2209420bcb, type: 3}
+  yOffset: 0.6
