@@ -59,7 +59,7 @@ public partial class @GameInputControl: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ac582d2e-dd92-49a5-899e-17b71e5809b5"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
@@ -81,7 +81,7 @@ public partial class @GameInputControl: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b48f734c-b5bd-4d6b-892e-6608e8911407"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/o"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
@@ -103,7 +103,7 @@ public partial class @GameInputControl: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""316c58c9-6364-4575-bfc9-3e60fb65a737"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",

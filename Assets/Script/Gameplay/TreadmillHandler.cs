@@ -17,9 +17,9 @@ public class TreadmillHandler : MonoBehaviour
     {
         _inputActions = new GameInputControl();
         _inputActions.Player.Enable();
-        _topTreadMill.SetInputameText(_inputActions.Player.SwitchTopTreadmill.name);
+        /*_topTreadMill.SetInputameText(_inputActions.Player.SwitchTopTreadmill.name);
         _leftTreadMill.SetInputameText(_inputActions.Player.SwitchLeftTreadmill.name);
-        _rightTreadMill.SetInputameText(_inputActions.Player.SwitchRightTreadmill.name);
+        _rightTreadMill.SetInputameText(_inputActions.Player.SwitchRightTreadmill.name);*/
 
     }
 
@@ -30,7 +30,7 @@ public class TreadmillHandler : MonoBehaviour
         _rightTreadMill.Setup();
         _spawnLeftTreadMill.Setup();
         _spawnRightTreadMill.Setup();
-        
+
         _inputActions.Player.SwitchTopTreadmill.performed += SwitchTopTreadMill;
         _inputActions.Player.SwitchLeftTreadmill.performed += SwitchLeftTreadMill;
         _inputActions.Player.SwitchRightTreadmill.performed += SwitchRightTreadMill;
@@ -40,7 +40,6 @@ public class TreadmillHandler : MonoBehaviour
     private void SwitchTopTreadMill(InputAction.CallbackContext context)
     {
         _topTreadMill.InvertDirection();
-        Debug.Log(_inputActions.Player.SwitchTopTreadmill.bindings[0].id);
     }
 
     private void SwitchLeftTreadMill(InputAction.CallbackContext context)

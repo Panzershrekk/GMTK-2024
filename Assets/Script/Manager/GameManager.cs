@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
 
         _timerText.text = "Ready ?";
         Sequence sequence = DOTween.Sequence();
-        sequence.AppendInterval(1.5f);
+        sequence.AppendInterval(2.5f);
         sequence.OnComplete(
             () =>
             {

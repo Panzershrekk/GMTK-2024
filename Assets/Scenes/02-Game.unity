@@ -925,7 +925,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8b77b0120fbb73446aaf26bff5234bfd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7b0dedeaee037b46bd52ab2973814ee, type: 2}
   m_sharedMaterial: {fileID: 2675499834182991645, guid: 8b77b0120fbb73446aaf26bff5234bfd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -933,7 +933,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.24705882, g: 0.08235294, b: 0.02745098, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -991,7 +991,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &502365490
@@ -1560,6 +1560,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &714580760
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1783240507}
+    m_Modifications:
+    - target: {fileID: 7611083350837346777, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_Name
+      value: '[Prefab]ChainOfTreadMill (12)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
 --- !u!1001 &747959219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1662,7 +1719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2caec0c7238b82f49987d5aa5e63188e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slimeObjective: 2
+  _slimeObjective: 6
   _possibleAliments:
   - {fileID: 11400000, guid: 6cf74a3ccbfe9194181363477399ec4a, type: 2}
   - {fileID: 11400000, guid: 9404720804063874b901c25d67a3deb0, type: 2}
@@ -2193,6 +2250,14 @@ PrefabInstance:
     - target: {fileID: 846871738053511485, guid: 84b837041e7841748bfe91925b440d1f, type: 3}
       propertyPath: _speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488909549880553614, guid: 84b837041e7841748bfe91925b440d1f, type: 3}
+      propertyPath: m_text
+      value: L
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488909549880553614, guid: 84b837041e7841748bfe91925b440d1f, type: 3}
+      propertyPath: m_fontSize
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 2239110190007098765, guid: 84b837041e7841748bfe91925b440d1f, type: 3}
       propertyPath: m_LocalScale.x
@@ -2864,6 +2929,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4d3706ecfe7414d8f5416fc87871db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1389536511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7611083350837346777, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+  m_PrefabInstance: {fileID: 714580760}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1389536512 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7673178729886655766, guid: 093eeb9c7a544754cb7ba40c94d6434a, type: 3}
+  m_PrefabInstance: {fileID: 714580760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1437109942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,7 +3416,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8b77b0120fbb73446aaf26bff5234bfd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7b0dedeaee037b46bd52ab2973814ee, type: 2}
   m_sharedMaterial: {fileID: 2675499834182991645, guid: 8b77b0120fbb73446aaf26bff5234bfd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3349,7 +3424,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.24705882, g: 0.08235294, b: 0.02745098, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3407,7 +3482,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1743318512
@@ -3524,6 +3599,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!4 &1783240507 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1137627887645181706, guid: bf3c8366a7b355449a0ac74d70746d89, type: 3}
+  m_PrefabInstance: {fileID: 4308463381167050810}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1793932320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3875,7 +3955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 38, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
   m_SizeDelta: {x: 432, y: 114.4}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1860481553
@@ -4730,6 +4810,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 320576957159762441, guid: bf3c8366a7b355449a0ac74d70746d89, type: 3}
+      propertyPath: m_text
+      value: O
+      objectReference: {fileID: 0}
+    - target: {fileID: 320576957159762441, guid: bf3c8366a7b355449a0ac74d70746d89, type: 3}
+      propertyPath: m_fontSize
+      value: 46.45
+      objectReference: {fileID: 0}
     - target: {fileID: 1137627887645181706, guid: bf3c8366a7b355449a0ac74d70746d89, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.55
@@ -4774,6 +4862,18 @@ PrefabInstance:
       propertyPath: _speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1953419881349157818, guid: bf3c8366a7b355449a0ac74d70746d89, type: 3}
+      propertyPath: _chains.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953419881349157818, guid: bf3c8366a7b355449a0ac74d70746d89, type: 3}
+      propertyPath: '_chains.Array.data[13]'
+      value: 
+      objectReference: {fileID: 1389536511}
+    - target: {fileID: 4233378118953014706, guid: bf3c8366a7b355449a0ac74d70746d89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.68
+      objectReference: {fileID: 0}
     - target: {fileID: 4490436999501173866, guid: bf3c8366a7b355449a0ac74d70746d89, type: 3}
       propertyPath: m_Name
       value: '[Prefab]TreadmillSwitchableTop'
@@ -4792,7 +4892,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1137627887645181706, guid: bf3c8366a7b355449a0ac74d70746d89, type: 3}
+      insertIndex: 22
+      addedObject: {fileID: 1389536512}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf3c8366a7b355449a0ac74d70746d89, type: 3}
 --- !u!1001 &7586389577070702519
@@ -4806,6 +4909,14 @@ PrefabInstance:
     - target: {fileID: 846871738053511485, guid: 84b837041e7841748bfe91925b440d1f, type: 3}
       propertyPath: _speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488909549880553614, guid: 84b837041e7841748bfe91925b440d1f, type: 3}
+      propertyPath: m_text
+      value: K
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488909549880553614, guid: 84b837041e7841748bfe91925b440d1f, type: 3}
+      propertyPath: m_fontSize
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 2239110190007098765, guid: 84b837041e7841748bfe91925b440d1f, type: 3}
       propertyPath: m_LocalPosition.x

@@ -63,19 +63,19 @@ public class Slime : MonoBehaviour
     public void Update()
     {
 #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             LoadSlimeConfig(mediumConfig);
         }
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.V))
         {
             LoadSlimeConfig(bigConfig);
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             LoadSlimeConfig(largeConfig);
         }
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.Comma))
         {
             LoadSlimeConfig(smallConfig);
         }
@@ -91,7 +91,7 @@ public class Slime : MonoBehaviour
                 .Append(slimeParent.DOScaleX(0.6f, 0.2f).SetEase(Ease.Linear))
                 .Join(slimeParent.DOScaleY(0.3f, 0.2f).SetEase(Ease.Linear));
         sequence.Play();
-
+        AudioManager.Instance.Play("Grow");
         sequence.OnComplete(() =>
         {
             mouthCloseSprite.sprite = config.spriteMouthClosed;
@@ -126,7 +126,6 @@ public class Slime : MonoBehaviour
         }
         _sizeText.text = _currentSize.ToString();
         _sizeGainAnimator.Play("Gain");
-        AudioManager.Instance.Play("Grow");
         if (_currentSize >= _objective)
         {
             _slimeObjectivePanel.ToogleObjectiveDone(true);

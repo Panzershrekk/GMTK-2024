@@ -256,9 +256,9 @@ MonoBehaviour:
   slimeDownSprite: {fileID: 1076199944284016479}
   mouthSprite: {fileID: 7385785622043879973}
   tongueSprite: {fileID: 5991146432378500349}
-  largeSizeThreshold: 8
-  bigSizeThreshold: 5
-  mediumSizeThresold: 3
+  largeSizeThreshold: 6
+  bigSizeThreshold: 4
+  mediumSizeThresold: 2
   smallConfig: {fileID: 11400000, guid: 6911b4231e7bd1e44a7cca71168accf8, type: 2}
   mediumConfig: {fileID: 11400000, guid: cbf5b9b11e598af45b9b1da24e8f8a06, type: 2}
   bigConfig: {fileID: 11400000, guid: 6f1e28664c34f9a47964765b2b98fef3, type: 2}
