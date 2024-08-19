@@ -642,7 +642,7 @@ MonoBehaviour:
   - {fileID: 3566152413582140327}
   _limitRight: {fileID: 4233378118953014706}
   _limitLeft: {fileID: 415761195030341113}
-  _speedGain: 1
+  _speedGain: 5
   _leftArrow: {fileID: 3563284407345657981}
   _rightArrow: {fileID: 2714468892338834723}
 --- !u!1 &6371258640993737899

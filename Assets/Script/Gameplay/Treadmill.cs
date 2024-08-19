@@ -20,9 +20,6 @@ public class Treadmill : MonoBehaviour
     void Start()
     {
         Refresh();
-        Debug.Log("Limir right " + _limitRight.localPosition);
-        Debug.Log("Limir left " + _limitLeft.localPosition);
-
     }
 
     void Update()
@@ -57,14 +54,22 @@ public class Treadmill : MonoBehaviour
             chain.transform.localPosition += translation;
             //chain.transform.Translate(translation);
         }
-        /*if (_direction == TreadmillDirectionType.Left && _effector.speed > -_speed)
+        if (_direction == TreadmillDirectionType.Left && _effector.speed > -_speed)
         {
             _effector.speed -= _speedGain * Time.deltaTime;
+            if (_effector.speed < -_speed)
+            {
+                _effector.speed = -_speed;
+            }
         }
         if (_direction == TreadmillDirectionType.Right && _effector.speed < _speed)
         {
             _effector.speed += _speedGain * Time.deltaTime;
-        }*/
+            if (_effector.speed > _speed)
+            {
+                _effector.speed = _speed;
+            }
+        }
     }
 
     public void SetInputameText(string text)
@@ -83,7 +88,7 @@ public class Treadmill : MonoBehaviour
 
     private void Refresh()
     {
-        _effector.speed = _direction == TreadmillDirectionType.Right ? _speed : -_speed;
+        //_effector.speed = _direction == TreadmillDirectionType.Right ? _speed : -_speed;
         if (_leftArrow != null && _rightArrow != null)
         {
             if (_direction == TreadmillDirectionType.Left)
@@ -97,7 +102,7 @@ public class Treadmill : MonoBehaviour
                 _leftArrow.Toggle(false);
             }
         }
-        //_effector.speed = 0;
+        _effector.speed = 0;
     }
 
 }

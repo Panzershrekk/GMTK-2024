@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-using Unity.VisualScripting;
+using DG.Tweening;
 //
 // THIS CLASS US SINGLETON PATTERN
 //
@@ -73,7 +73,15 @@ public class GameManager : MonoBehaviour
         }
         _objectiveSlimeOneText.text = _slimeObjective.ToString() + " KG";
         _objectiveSlimeTwoText.text = _slimeObjective.ToString() + " KG";
-        StartGame();
+        CurrentRoundTime = _currentRoundTimeInSecond;
+        Sequence sequence = DOTween.Sequence();
+        sequence.AppendInterval(2f);
+        sequence.Play();
+
+        sequence.OnComplete(() =>
+        {
+            StartGame();
+        });
     }
 
     public void StartGame()

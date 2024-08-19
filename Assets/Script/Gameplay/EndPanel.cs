@@ -10,11 +10,12 @@ public class EndPanel : MonoBehaviour
     [SerializeField] CanvasGroup _canvasGroup;
     [SerializeField] GameObject _victory;
     [SerializeField] GameObject _loose;
+
     public void Display(bool victory)
     {
         _canvasGroup.alpha = 0;
         _canvasGroup.DOFade(_showPanelFadePower, _showPanelTime);
         _victory.SetActive(victory);
-        _loose.SetActive(victory);
+        _loose.SetActive(!victory);
     }
 }

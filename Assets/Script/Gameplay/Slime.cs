@@ -15,6 +15,9 @@ public class Slime : MonoBehaviour
     [SerializeField] private Combination _combination;
     [SerializeField] private float _sizeGainPerSuccess = 1f;
 
+    [SerializeField] private GameObject particle;
+    [SerializeField] private Transform particleParent;
+
     [Header("Slime")]
     [SerializeField] private Transform slimeParent;
     [SerializeField] private SpriteRenderer mouthCloseSprite;
@@ -130,6 +133,7 @@ public class Slime : MonoBehaviour
             if (eddibleAliment != null)
             {
                 _animator.Play("Eat");
+                Instantiate(particle, particleParent.position, Quaternion.identity);
                 //_combination.CheckForCombination(eddibleAliment.GetAlimentDefinition());
                 if (_combination.CheckForCombination(eddibleAliment.GetAlimentDefinition()) == true)
                 {

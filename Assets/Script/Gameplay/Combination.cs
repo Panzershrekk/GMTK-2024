@@ -12,6 +12,7 @@ public class CombinationPart
 
 public class Combination : MonoBehaviour
 {
+    [SerializeField] Animator _animatorCombi;
     [SerializeField] private CombinationDisplayer _combinationDisplayer;
     private List<CombinationPart> _combinationPart = new List<CombinationPart>();
 
@@ -55,6 +56,7 @@ public class Combination : MonoBehaviour
         _combinationDisplayer.RefreshUI(_combinationPart);
         if (validCount == _combinationPart.Count)
         {
+            _animatorCombi.Play("Hide");
             return true;
         }
         return false;
@@ -62,6 +64,7 @@ public class Combination : MonoBehaviour
 
     private void Reset()
     {
+        _animatorCombi.Play("WrongCombinationAnim");
         foreach (CombinationPart combinationPart in _combinationPart)
         {
             combinationPart.isValidated = false;
