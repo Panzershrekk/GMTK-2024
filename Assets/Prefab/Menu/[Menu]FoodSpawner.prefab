@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5220102262338009062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7085123907138923793}
+  - component: {fileID: 7974674632920942567}
+  m_Layer: 0
+  m_Name: '[Menu]FoodSpawner'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7085123907138923793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220102262338009062}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.55, y: 6.72, z: 51.849934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7974674632920942567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220102262338009062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f52bab589b0794a912a147273e5c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawns:
+  - {fileID: 6135317510109557586, guid: cb2b433a97b0e9c47956baf3bab7113e, type: 3}
+  - {fileID: 6135317510109557586, guid: a8b872344e95f8d44b0e1325e77b546b, type: 3}
+  - {fileID: 6135317510109557586, guid: 2f298d7fcfedd7f40babf19162bf11d2, type: 3}
+  - {fileID: 6135317510109557586, guid: 63eb4ce5b16bf5349ad9a101b96b5de6, type: 3}
+  - {fileID: 6135317510109557586, guid: 961d51f6f8616d94c8354ca5002e139c, type: 3}
+  _spawnVariation: 1
+  _spawnTime: 0.5

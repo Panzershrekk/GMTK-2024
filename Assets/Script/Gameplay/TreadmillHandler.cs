@@ -9,6 +9,8 @@ public class TreadmillHandler : MonoBehaviour
     [SerializeField] private Treadmill _topTreadMill;
     [SerializeField] private Treadmill _leftTreadMill;
     [SerializeField] private Treadmill _rightTreadMill;
+    [SerializeField] private Treadmill _spawnLeftTreadMill;
+    [SerializeField] private Treadmill _spawnRightTreadMill;
 
     // Start is called before the first frame update
     void Awake()
@@ -23,6 +25,12 @@ public class TreadmillHandler : MonoBehaviour
 
     public void Setup()
     {
+        _topTreadMill.Setup();
+        _leftTreadMill.Setup();
+        _rightTreadMill.Setup();
+        _spawnLeftTreadMill.Setup();
+        _spawnRightTreadMill.Setup();
+        
         _inputActions.Player.SwitchTopTreadmill.performed += SwitchTopTreadMill;
         _inputActions.Player.SwitchLeftTreadmill.performed += SwitchLeftTreadMill;
         _inputActions.Player.SwitchRightTreadmill.performed += SwitchRightTreadMill;

@@ -11,6 +11,7 @@ public class Dumpster : MonoBehaviour
     {
         if (col.gameObject != null)
         {
+            AudioManager.Instance.Play("Dump");
             Instantiate(particle, particleParent.position, Quaternion.identity);
             Destroy(col.gameObject);
         }

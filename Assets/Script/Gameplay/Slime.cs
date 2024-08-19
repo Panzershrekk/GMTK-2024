@@ -7,6 +7,8 @@ using DG.Tweening;
 public class Slime : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
+    [SerializeField] private Animator _sizeGainAnimator;
+
     [SerializeField] private Transform _slimeBouncer;
 
     [SerializeField] private TMP_Text _sizeText;
@@ -17,6 +19,8 @@ public class Slime : MonoBehaviour
 
     [SerializeField] private GameObject particle;
     [SerializeField] private Transform particleParent;
+
+    [SerializeField] private SlimeObjectivePanel _slimeObjectivePanel;
 
     [Header("Slime")]
     [SerializeField] private Transform slimeParent;
@@ -37,6 +41,7 @@ public class Slime : MonoBehaviour
     [SerializeField] private SlimeConfig largeConfig;
 
     private float _currentSize = 1;
+    private float _objective = 0f;
 
     public void Start()
     {
@@ -47,10 +52,12 @@ public class Slime : MonoBehaviour
         sequence.Play();
     }
 
-    public void Setup()
+    public void Setup(float objective)
     {
         _combination.GenerateNewCombination(_combinationSize);
         _sizeText.text = _currentSize.ToString();
+        _objective = objective;
+        _slimeObjectivePanel.Setup(objective);
     }
 
     public void Update()
@@ -118,6 +125,12 @@ public class Slime : MonoBehaviour
             LoadSlimeConfig(mediumConfig);
         }
         _sizeText.text = _currentSize.ToString();
+        _sizeGainAnimator.Play("Gain");
+        AudioManager.Instance.Play("Grow");
+        if (_currentSize >= _objective)
+        {
+            _slimeObjectivePanel.ToogleObjectiveDone(true);
+        }
     }
 
     public Combination GetCombination()
@@ -133,6 +146,7 @@ public class Slime : MonoBehaviour
             if (eddibleAliment != null)
             {
                 _animator.Play("Eat");
+                AudioManager.Instance.Play("Eat");
                 Instantiate(particle, particleParent.position, Quaternion.identity);
                 //_combination.CheckForCombination(eddibleAliment.GetAlimentDefinition());
                 if (_combination.CheckForCombination(eddibleAliment.GetAlimentDefinition()) == true)

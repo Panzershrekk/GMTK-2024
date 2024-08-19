@@ -41,8 +41,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Slime> _slimeList = new List<Slime>();
     [SerializeField] private EndPanel _endPanel;
     [SerializeField] private float _currentRoundTimeInSecond = 180f;
-    [SerializeField] private TMP_Text _objectiveSlimeOneText;
-    [SerializeField] private TMP_Text _objectiveSlimeTwoText;
 
     private bool _gameStarted = false;
     private UnityEvent _onGameStarted = new UnityEvent();
@@ -69,19 +67,28 @@ public class GameManager : MonoBehaviour
         _onGameEnded.AddListener(_spawnerHandler.Stop);
         foreach (Slime slime in _slimeList)
         {
-            slime.Setup();
+            slime.Setup(_slimeObjective);
         }
-        _objectiveSlimeOneText.text = _slimeObjective.ToString() + " KG";
-        _objectiveSlimeTwoText.text = _slimeObjective.ToString() + " KG";
         CurrentRoundTime = _currentRoundTimeInSecond;
-        Sequence sequence = DOTween.Sequence();
-        sequence.AppendInterval(2f);
-        sequence.Play();
 
-        sequence.OnComplete(() =>
-        {
-            StartGame();
-        });
+        _timerText.text = "Ready ?";
+        Sequence sequence = DOTween.Sequence();
+        sequence.AppendInterval(1.5f);
+        sequence.OnComplete(
+            () =>
+            {
+                _timerText.text = "GO !!";
+                sequence = DOTween.Sequence();
+                sequence.Join(_timerText.transform.DOScale(1.2f, 0.25f));
+                sequence.Append(_timerText.transform.DOScale(1.0f, 0.75f));
+                sequence.AppendInterval(1.5f);
+                sequence.Play();
+                sequence.OnComplete(() =>
+                {
+                    StartGame();
+                });
+            });
+        sequence.Play();
     }
 
     public void StartGame()
