@@ -1733,7 +1733,8 @@ MonoBehaviour:
   - {fileID: 1339613567}
   - {fileID: 1842238995}
   _endPanel: {fileID: 1120277100}
-  _currentRoundTimeInSecond: 120
+  _currentRoundTimeInSecond: 180
+  _transition: {fileID: 370513320}
 --- !u!4 &862037964
 Transform:
   m_ObjectHideFlags: 0
@@ -2566,9 +2567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2fb6487e7e1054b8708fccd39b3833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _showPanelFadePower: 1
-  _showPanelTime: 1
-  _canvasGroup: {fileID: 1120277099}
   _victory: {fileID: 1724982151}
   _loose: {fileID: 863940556}
 --- !u!1001 &1124986948

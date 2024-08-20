@@ -17,10 +17,7 @@ public class TreadmillHandler : MonoBehaviour
     {
         _inputActions = new GameInputControl();
         _inputActions.Player.Enable();
-        /*_topTreadMill.SetInputameText(_inputActions.Player.SwitchTopTreadmill.name);
-        _leftTreadMill.SetInputameText(_inputActions.Player.SwitchLeftTreadmill.name);
-        _rightTreadMill.SetInputameText(_inputActions.Player.SwitchRightTreadmill.name);*/
-
+        SetKeyBindingText("W", "A", "D");
     }
 
     public void Setup()
@@ -30,32 +27,35 @@ public class TreadmillHandler : MonoBehaviour
         _rightTreadMill.Setup();
         _spawnLeftTreadMill.Setup();
         _spawnRightTreadMill.Setup();
-
-        _inputActions.Player.SwitchTopTreadmill.performed += SwitchTopTreadMill;
-        _inputActions.Player.SwitchLeftTreadmill.performed += SwitchLeftTreadMill;
-        _inputActions.Player.SwitchRightTreadmill.performed += SwitchRightTreadMill;
+        _inputActions.Player.SwitchTreadmill.performed += SwitchTreadmill;
     }
 
-    //TODO, voir pour uniformiser ça
-    private void SwitchTopTreadMill(InputAction.CallbackContext context)
+    public void SwitchTreadmill(InputAction.CallbackContext context)
     {
-        _topTreadMill.InvertDirection();
+        Vector2 dir = context.ReadValue<Vector2>();
+        if (dir.x > 0.5)
+        {
+            _rightTreadMill.InvertDirection();
+        }
+        else if (dir.x < -0.5)
+        {
+            _leftTreadMill.InvertDirection();
+        }
+        else if (dir.y > 0.5)
+        {
+            _topTreadMill.InvertDirection();
+        }
     }
 
-    private void SwitchLeftTreadMill(InputAction.CallbackContext context)
+    private void SetKeyBindingText(string upKey, string leftKey, string rightKey)
     {
-        _leftTreadMill.InvertDirection();
-    }
-
-    private void SwitchRightTreadMill(InputAction.CallbackContext context)
-    {
-        _rightTreadMill.InvertDirection();
+        _topTreadMill.SetInputameText(upKey);
+        _leftTreadMill.SetInputameText(leftKey);
+        _rightTreadMill.SetInputameText(rightKey);
     }
 
     private void OnDestroy()
     {
-        _inputActions.Player.SwitchTopTreadmill.performed -= SwitchTopTreadMill;
-        _inputActions.Player.SwitchLeftTreadmill.performed -= SwitchLeftTreadMill;
-        _inputActions.Player.SwitchRightTreadmill.performed -= SwitchRightTreadMill;
+        _inputActions.Player.SwitchTreadmill.performed -= SwitchTreadmill;
     }
 }

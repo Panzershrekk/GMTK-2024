@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Slime> _slimeList = new List<Slime>();
     [SerializeField] private EndPanel _endPanel;
     [SerializeField] private float _currentRoundTimeInSecond = 180f;
+    [SerializeField] private Animator _transition;
 
     private bool _gameStarted = false;
     private UnityEvent _onGameStarted = new UnityEvent();
@@ -107,7 +108,6 @@ public class GameManager : MonoBehaviour
                 //FinsihGame
                 _gameStarted = false;
                 _onGameEnded?.Invoke();
-                _endPanel.gameObject.SetActive(true);
                 FreezeAllAliment();
                 bool victory = true;
                 foreach (Slime slime in _slimeList)
@@ -117,7 +117,15 @@ public class GameManager : MonoBehaviour
                         victory = false;
                     }
                 }
-                _endPanel.Display(victory);
+                _transition.Play("FadeOutDouble");
+                Sequence sequence = DOTween.Sequence();
+                sequence.AppendInterval(1.2f);
+                sequence.OnComplete(() =>
+                {
+                    _endPanel.gameObject.SetActive(true);
+                    _endPanel.Display(victory);
+                });
+                sequence.Play();
             }
         }
     }

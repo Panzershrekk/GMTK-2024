@@ -28,107 +28,78 @@ public partial class @GameInputControl: IInputActionCollection2, IDisposable
             ""id"": ""8af7e1cf-8542-48a4-bae7-74723acac4e6"",
             ""actions"": [
                 {
-                    ""name"": ""SwitchTopTreadmill"",
-                    ""type"": ""Button"",
+                    ""name"": ""SwitchTreadmill"",
+                    ""type"": ""Value"",
                     ""id"": ""a437e14f-5fa5-4f79-885d-6c43fb8ca4b2"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SwitchLeftTreadmill"",
-                    ""type"": ""Button"",
-                    ""id"": ""c56100fa-f5d5-4a6a-9f09-ee0103bbf8a4"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SwitchRightTreadmill"",
-                    ""type"": ""Button"",
-                    ""id"": ""a34b05a4-9e60-4853-8324-47c44e59fa01"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""ac582d2e-dd92-49a5-899e-17b71e5809b5"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""9659b177-9fab-4076-8756-a3a8cdd2430b"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""SwitchLeftTreadmill"",
-                    ""isComposite"": false,
+                    ""groups"": """",
+                    ""action"": ""SwitchTreadmill"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""09d9fbf8-c3af-4032-9765-16a90fbd3a8a"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""name"": ""up"",
+                    ""id"": ""b83e350f-f5bc-4767-9608-944d3894f00c"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""SwitchLeftTreadmill"",
+                    ""groups"": ""QWERTY"",
+                    ""action"": ""SwitchTreadmill"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""b48f734c-b5bd-4d6b-892e-6608e8911407"",
-                    ""path"": ""<Keyboard>/o"",
+                    ""name"": ""down"",
+                    ""id"": ""56e8a3aa-373f-4bef-9906-88e350bee4f7"",
+                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""SwitchTopTreadmill"",
+                    ""groups"": ""QWERTY"",
+                    ""action"": ""SwitchTreadmill"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""f2cec0d0-0e1c-47f2-975e-ab56383e20a3"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""name"": ""left"",
+                    ""id"": ""349b4d3d-3f41-419a-83e3-f309586bcbd8"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""SwitchTopTreadmill"",
+                    ""groups"": ""QWERTY"",
+                    ""action"": ""SwitchTreadmill"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""316c58c9-6364-4575-bfc9-3e60fb65a737"",
-                    ""path"": ""<Keyboard>/l"",
+                    ""name"": ""right"",
+                    ""id"": ""c6b70e75-4f1c-4557-a531-191e7e91f729"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""SwitchRightTreadmill"",
+                    ""groups"": ""QWERTY"",
+                    ""action"": ""SwitchTreadmill"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4f25f53d-e593-4c2a-b06d-92dfc3ba0a9f"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""SwitchRightTreadmill"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 }
             ]
         }
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""Keyboard"",
-            ""bindingGroup"": ""Keyboard"",
+            ""name"": ""QWERTY"",
+            ""bindingGroup"": ""QWERTY"",
             ""devices"": []
         },
         {
@@ -140,9 +111,7 @@ public partial class @GameInputControl: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_SwitchTopTreadmill = m_Player.FindAction("SwitchTopTreadmill", throwIfNotFound: true);
-        m_Player_SwitchLeftTreadmill = m_Player.FindAction("SwitchLeftTreadmill", throwIfNotFound: true);
-        m_Player_SwitchRightTreadmill = m_Player.FindAction("SwitchRightTreadmill", throwIfNotFound: true);
+        m_Player_SwitchTreadmill = m_Player.FindAction("SwitchTreadmill", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -204,16 +173,12 @@ public partial class @GameInputControl: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_SwitchTopTreadmill;
-    private readonly InputAction m_Player_SwitchLeftTreadmill;
-    private readonly InputAction m_Player_SwitchRightTreadmill;
+    private readonly InputAction m_Player_SwitchTreadmill;
     public struct PlayerActions
     {
         private @GameInputControl m_Wrapper;
         public PlayerActions(@GameInputControl wrapper) { m_Wrapper = wrapper; }
-        public InputAction @SwitchTopTreadmill => m_Wrapper.m_Player_SwitchTopTreadmill;
-        public InputAction @SwitchLeftTreadmill => m_Wrapper.m_Player_SwitchLeftTreadmill;
-        public InputAction @SwitchRightTreadmill => m_Wrapper.m_Player_SwitchRightTreadmill;
+        public InputAction @SwitchTreadmill => m_Wrapper.m_Player_SwitchTreadmill;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -223,28 +188,16 @@ public partial class @GameInputControl: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @SwitchTopTreadmill.started += instance.OnSwitchTopTreadmill;
-            @SwitchTopTreadmill.performed += instance.OnSwitchTopTreadmill;
-            @SwitchTopTreadmill.canceled += instance.OnSwitchTopTreadmill;
-            @SwitchLeftTreadmill.started += instance.OnSwitchLeftTreadmill;
-            @SwitchLeftTreadmill.performed += instance.OnSwitchLeftTreadmill;
-            @SwitchLeftTreadmill.canceled += instance.OnSwitchLeftTreadmill;
-            @SwitchRightTreadmill.started += instance.OnSwitchRightTreadmill;
-            @SwitchRightTreadmill.performed += instance.OnSwitchRightTreadmill;
-            @SwitchRightTreadmill.canceled += instance.OnSwitchRightTreadmill;
+            @SwitchTreadmill.started += instance.OnSwitchTreadmill;
+            @SwitchTreadmill.performed += instance.OnSwitchTreadmill;
+            @SwitchTreadmill.canceled += instance.OnSwitchTreadmill;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @SwitchTopTreadmill.started -= instance.OnSwitchTopTreadmill;
-            @SwitchTopTreadmill.performed -= instance.OnSwitchTopTreadmill;
-            @SwitchTopTreadmill.canceled -= instance.OnSwitchTopTreadmill;
-            @SwitchLeftTreadmill.started -= instance.OnSwitchLeftTreadmill;
-            @SwitchLeftTreadmill.performed -= instance.OnSwitchLeftTreadmill;
-            @SwitchLeftTreadmill.canceled -= instance.OnSwitchLeftTreadmill;
-            @SwitchRightTreadmill.started -= instance.OnSwitchRightTreadmill;
-            @SwitchRightTreadmill.performed -= instance.OnSwitchRightTreadmill;
-            @SwitchRightTreadmill.canceled -= instance.OnSwitchRightTreadmill;
+            @SwitchTreadmill.started -= instance.OnSwitchTreadmill;
+            @SwitchTreadmill.performed -= instance.OnSwitchTreadmill;
+            @SwitchTreadmill.canceled -= instance.OnSwitchTreadmill;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -262,13 +215,13 @@ public partial class @GameInputControl: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-    private int m_KeyboardSchemeIndex = -1;
-    public InputControlScheme KeyboardScheme
+    private int m_QWERTYSchemeIndex = -1;
+    public InputControlScheme QWERTYScheme
     {
         get
         {
-            if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
-            return asset.controlSchemes[m_KeyboardSchemeIndex];
+            if (m_QWERTYSchemeIndex == -1) m_QWERTYSchemeIndex = asset.FindControlSchemeIndex("QWERTY");
+            return asset.controlSchemes[m_QWERTYSchemeIndex];
         }
     }
     private int m_ControllerSchemeIndex = -1;
@@ -282,8 +235,6 @@ public partial class @GameInputControl: IInputActionCollection2, IDisposable
     }
     public interface IPlayerActions
     {
-        void OnSwitchTopTreadmill(InputAction.CallbackContext context);
-        void OnSwitchLeftTreadmill(InputAction.CallbackContext context);
-        void OnSwitchRightTreadmill(InputAction.CallbackContext context);
+        void OnSwitchTreadmill(InputAction.CallbackContext context);
     }
 }
